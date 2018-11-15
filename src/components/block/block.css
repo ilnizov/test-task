@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+.block-container
+{
+    font: 300 32px 'Roboto', sans-serif;
+    margin: 100px;
+}
+
+.block-container > header
+{
+    text-align: center;
+    font: 500 24px 'Roboto', sans-serif;
+}
+
+.block
+{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    border: 5px solid #e7f7f5;;
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    justify-content: center;
+    text-align: center;
+}
