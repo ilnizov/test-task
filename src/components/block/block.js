@@ -13,7 +13,7 @@ export default class Block extends Component {
         this.socket = new WebSocket('wss://ws.blockchain.info/inv');
         this.socket.onopen = () => {
             this.socket.send(JSON.stringify({
-                "op":"blocks_sub",
+                'op': 'blocks_sub',
             }))
         };
         this.socket.onmessage = data => {
@@ -21,8 +21,8 @@ export default class Block extends Component {
             const { blockIndex, prevBlockIndex } = info;
 
             this.setState({
-                blockIndex,
-                prevBlockIndex
+                blockIndex: blockIndex,
+                prevBlockIndex: prevBlockIndex
             })
         }
     }
@@ -34,8 +34,8 @@ export default class Block extends Component {
                     <h5>New BTC Block</h5>
                 </header>
                 <div className="block">
-                    <span>{this.state.blockIndex}</span>
-                    <span>{this.state.prevBlockIndex}</span>
+                    <span>{ this.state.blockIndex }</span>
+                    <span>{ this.state.prevBlockIndex }</span>
                 </div>
             </section>
         )

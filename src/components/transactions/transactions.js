@@ -13,7 +13,7 @@ export default class Transaction extends Component {
         this.socket = new WebSocket('wss://ws.blockchain.info/inv');
         this.socket.onopen = () => {
             this.socket.send(JSON.stringify({
-                "op":"unconfirmed_sub",
+                'op': 'unconfirmed_sub',
             }))
         };
         this.socket.onmessage = data => {
@@ -29,9 +29,9 @@ export default class Transaction extends Component {
     }
 
     static correctInput(value) {
-        const round = Math.round(value);
-
-        return round >= 1000 ? Math.floor(round / 1000) + 'k' : round;
+        return Math.round(value) >= 1000 ?
+            Math.floor(Math.round(value) / 1000) + 'k' :
+            Math.round(value);
     }
 
     render() {
@@ -41,8 +41,8 @@ export default class Transaction extends Component {
                     <h5>New BTC transactions</h5>
                 </header>
                 <div className="transaction">
-                    <span>{Transaction.correctInput(this.state.value)}</span>
-                    <span># {this.state.count}</span>
+                    <span>{ Transaction.correctInput(this.state.value) }</span>
+                    <span># { this.state.count }</span>
                 </div>
             </section>
         )
