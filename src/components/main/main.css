@@ -1,0 +1,9 @@
+.blockchain-container
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: space-between;
+    align-items: center;
+    color: #e7f7f5;
+}
